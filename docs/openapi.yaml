@@ -4,10 +4,17 @@ info:
   version: 1.0.0
 servers:
   - url: http://localhost:3000
+
+tags:
+  - name: Tasks
+    description: Task-related endpoints
+
 paths:
   /tasks:
     get:
       summary: List all tasks
+      tags:
+        - Tasks
       parameters:
         - name: completed
           in: query
@@ -36,6 +43,8 @@ paths:
                   $ref: '#/components/schemas/Task'
     post:
       summary: Create a new task
+      tags:
+        - Tasks
       requestBody:
         required: true
         content:
