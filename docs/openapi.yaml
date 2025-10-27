@@ -8,6 +8,23 @@ paths:
   /tasks:
     get:
       summary: List all tasks
+      parameters:
+        - name: completed
+          in: query
+          required: false
+          description: Filter tasks by commpletion status
+          schema:
+            type: boolean
+            example: true
+
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of tasks to return
+          schema:
+            type: integer
+            example: 10
+
       responses:
         '200':
           description: OK
