@@ -81,8 +81,6 @@ components:
           type: array
           items:
             type: string
-          example:
-            - Title is required
   responses:
     BadRequest:
       description: Invalid input
