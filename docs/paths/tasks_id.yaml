@@ -1,7 +1,30 @@
 get:
-  summary: Get a post with a specific user ID
-  tags:
-    - Tasks
+  summary: Get a task by ID
+  description: Returns a single task with the given ID.
+  parameters:
+    - in: path
+      name: id
+      required: true
+      description: The ID of the task to retrieve.
+      schema:
+        type: integer
+        example: 1
   responses:
+    '200':
+      description: Task found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Task.yaml
     '400':
-      $ref: ../components/responses/BadRequest.yaml
+      description: Invalid ID
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ValidationError.yaml
+    '404':
+      description: Task not found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/NotFoundError.yaml

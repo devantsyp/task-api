@@ -12,5 +12,8 @@ export async function create(data) {
 }
 
 export async function findById(targetId) {
-  return prisma.task.findUnique({ where: { id: targetId } });
+  return prisma.task.findUnique({
+    where: { id: targetId },
+    select: { id: true, title: true, completed: true },
+  });
 }
