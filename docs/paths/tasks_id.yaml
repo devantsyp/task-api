@@ -1,0 +1,7 @@
+get:
+  summary: Get a post with a specific user ID
+  tags:
+    - Tasks
+  responses:
+    '400':
+      $ref: ../components/responses/BadRequest.yaml
