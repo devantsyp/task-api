@@ -1,5 +1,7 @@
 get:
   summary: Get a task by ID
+  tags:
+    - Tasks
   description: Returns a single task with the given ID.
   parameters:
     - in: path
